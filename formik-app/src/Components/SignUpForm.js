@@ -40,9 +40,7 @@ const SignUpForm = () => {
           <input
             name="name"
             type="text"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            {...formik.getFieldProps("name")}
           />
           {
               formik.errors && formik.touched.name &&(
@@ -55,9 +53,7 @@ const SignUpForm = () => {
           <input
             name="email"
             type="text"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            {...formik.getFieldProps("email")}
           />
           {
               formik.errors && formik.touched.email && (
@@ -70,9 +66,7 @@ const SignUpForm = () => {
           <input
             name="password"
             type="text"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            {...formik.getFieldProps("password")}
           />
           {
               formik.errors && formik.touched.password && (
