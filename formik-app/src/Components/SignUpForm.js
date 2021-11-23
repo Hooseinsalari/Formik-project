@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 
+import * as Yup from 'yup';
+
 //.1
 const initialValues = {
     name: "",
@@ -12,23 +14,11 @@ const onSubmit = (values) => {
     console.log(values)
 }
 // 3
-const validate = (values) => {
-    let errors = {};
-
-    if(!values.name) {
-        errors.name = "Name is Required"
-    }
-
-    if(!values.email) {
-        errors.email = "Email is Required"
-    }
-
-    if(!values.password) {
-        errors.password = "Password is Required"
-    }
-    
-    return errors;
-}
+const validationSchema = Yup.object({
+    name: Yup.string().required("Name is Required"),
+    email: Yup.string().email("Invalid Email Format!").required("Email is Required"),
+    password: Yup.string().required("Password is Required")
+})
 
 const SignUpForm = () => {
 
@@ -36,10 +26,10 @@ const SignUpForm = () => {
   const formik = useFormik({
     initialValues,
     onSubmit,
-    validate
+    validationSchema
   });
 
-  console.log(formik.errors, formik.touched)
+//   console.log(formik.errors, formik.touched)
 
 
   return (
