@@ -39,7 +39,7 @@ const SignUpForm = () => {
     validate
   });
 
-  console.log(formik.errors)
+  console.log(formik.errors, formik.touched)
 
 
   return (
@@ -52,7 +52,13 @@ const SignUpForm = () => {
             type="text"
             value={formik.values.name}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {
+              formik.errors && formik.touched.name &&(
+                  <div>{formik.errors.name}</div>
+              )
+          }
         </div>
         <div>
           <label>Email</label>
@@ -61,7 +67,13 @@ const SignUpForm = () => {
             type="text"
             value={formik.values.email}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {
+              formik.errors && formik.touched.email && (
+                  <div>{formik.errors.email}</div>
+              )
+          }
         </div>
         <div>
           <label>Password</label>
@@ -70,7 +82,13 @@ const SignUpForm = () => {
             type="text"
             value={formik.values.password}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {
+              formik.errors && formik.touched.password && (
+                  <div>{formik.errors.password}</div>
+              )
+          }
         </div>
         <button type="submit">submit</button>
       </form>
