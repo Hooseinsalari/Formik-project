@@ -29,7 +29,7 @@ const validationSchema = Yup.object({
     .min(8, "should be 8 chars minimum")
     .max(16, "should be 16 chars maximum")
     .required("Password is Required"),
-  confirmPassword: Yup.string().oneOf(
+  confirmPassword: Yup.string().required("confirm password is Required").oneOf(
     [Yup.ref("password"), null],
     "Passwords must match"
   ),
@@ -40,6 +40,7 @@ const SignUpForm = () => {
     initialValues,
     onSubmit,
     validationSchema,
+    validateOnMount: true
   });
 
   //   console.log(formik.errors, formik.touched)
@@ -94,7 +95,7 @@ const SignUpForm = () => {
             <div>{formik.errors.confirmPassword}</div>
           )}
         </div>
-        <button type="submit">submit</button>
+        <button type="submit" disabled={!formik.isValid}>submit</button>
       </form>
     </div>
   );
