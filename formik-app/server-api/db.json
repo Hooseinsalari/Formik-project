@@ -1,0 +1,13 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "Hossein",
+      "email": "hossein002@gmail.com",
+      "phoneNumber": "09127770000",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "gender": "2"
+    }
+  ]
+}
