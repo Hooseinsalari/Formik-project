@@ -1,29 +1,50 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 
-const SignUpForm = () => {
-  // const [userData, setUserData] = useState({name:"", email: "", password: ""})
+//.1
+const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+}
+// 2
+const onSubmit = (values) => {
+    console.log(values)
+}
+// 3
+const validate = (values) => {
+    let errors = {};
 
-  // const inputHandler = (event) => {
-  //     setUserData({...userData, [event.target.name]: event.target.value})
-  // }
+    if(!values.name) {
+        errors.name = "Name is Required"
+    }
+
+    if(!values.email) {
+        errors.email = "Email is Required"
+    }
+
+    if(!values.password) {
+        errors.password = "Password is Required"
+    }
+    
+    return errors;
+}
+
+const SignUpForm = () => {
+
 
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      password: "",
-    },
+    initialValues,
+    onSubmit,
+    validate
   });
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    console.log("data sended...");
-  };
+  console.log(formik.errors)
+
 
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={formik.handleSubmit}>
         <div>
           <label>Name</label>
           <input
