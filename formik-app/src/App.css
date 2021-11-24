@@ -1,3 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Rubik:wght@300&display=swap');
+
 .App {
   text-align: center;
+}
+
+.title {
+  margin: -5px 150px 40px 0;
+}
+
+.formContainer {
+  background-color: #9CA3AF;
+  width: 30rem;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.formContorol {
+  /* width: 300px; */
+  margin-bottom: 30px;
+  position: relative;
+  height: 52px;
+}
+
+.input {
+  width: 300px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #6B7280;
+}
+
+.inputLabel {
+  position: absolute;
+  bottom: 50px;
+}
+
+.error {
+  text-align: left;
+  margin-left: 87px;
+  background-color: #DC2626;
+  font-weight: bold;
+  width: fit-content;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.radioContainer {
+ margin-bottom: 30px;
+ margin-top: -5px; 
+ /* khataie ehtemali */
+ font-size: 17px;
+ /* font-weight: bold; */
+}
+
+.selectContainer {
+  margin-bottom: 30px;
+}
+
+
+.select {
+  width: 308px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+.checkBoxContainer {
+  margin-bottom: 30px;
+}
+
+.subBtn {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #6B7280;
+}
+
+.input[type="text"],
+[type="password"] {
+  font-size: 16px;
+  font-family: 'Acme', sans-serif;
 }

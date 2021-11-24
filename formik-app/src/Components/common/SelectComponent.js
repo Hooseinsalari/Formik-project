@@ -2,15 +2,15 @@ import React from 'react';
 
 const SelectComponent = ({formik, name, selectOption}) => {
     return (
-        <div>
-          <select name={name} {...formik.getFieldProps(name)}>
+        <div className="selectContainer">
+          <select name={name} {...formik.getFieldProps(name)} className="select">
               {selectOption.map((item) => (
                   <option key={item.value} value={item.value}>{item.label}</option>
               ))}
         
           </select>
           {formik.errors[name] && formik.touched[name] && (
-            <div>{formik.errors[name]}</div>
+            <div className="error">{formik.errors[name]}</div>
             )}
         </div>
     );

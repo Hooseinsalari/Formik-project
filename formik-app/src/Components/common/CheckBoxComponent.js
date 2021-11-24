@@ -2,7 +2,7 @@ import React from "react";
 
 const CheckBoxComponent = ({ formik, checkedBoxOption, name }) => {
   return (
-    <div>
+    <div className="checkBoxContainer">
       {checkedBoxOption.map((item) => (
         <React.Fragment key={item.value}>
           <input
@@ -17,7 +17,7 @@ const CheckBoxComponent = ({ formik, checkedBoxOption, name }) => {
         </React.Fragment>
       ))}
       {formik.errors[name] && formik.touched[name] && (
-        <div>{formik.errors[name]}</div>
+        <div className="error">{formik.errors[name]}</div>
       )}
     </div>
   );

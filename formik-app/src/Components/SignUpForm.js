@@ -89,7 +89,9 @@ const SignUpForm = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} className="formContainer">
+
+      <h1 className="title">Signup Form</h1>  
         
         <Input name="name" label="Name" formik={formik} />
         <Input name="email" label="Email" formik={formik} />
@@ -107,7 +109,8 @@ const SignUpForm = () => {
             <CheckBoxComponent name="interest" formik={formik} checkedBoxOption={checkedBoxOption} />
         </div>
 
-        <button type="submit" disabled={!formik.isValid}>submit</button>
+        <button className="subBtn" type="submit" disabled={!formik.isValid}>submit</button>
+        
       </form>
     </div>
   );

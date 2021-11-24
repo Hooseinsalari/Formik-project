@@ -12,6 +12,32 @@
         "react"
       ],
       "id": 1
+    },
+    {
+      "name": "Hossein",
+      "email": "salarih4412761@gmail.com",
+      "phoneNumber": "09106754656",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "gender": "2",
+      "country": "IR",
+      "interest": [
+        "react"
+      ],
+      "id": 2
+    },
+    {
+      "name": "Hossein",
+      "email": "salarih4412761@gmail.com",
+      "phoneNumber": "09106754656",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "gender": "2",
+      "country": "IR",
+      "interest": [
+        "react"
+      ],
+      "id": 3
     }
   ]
 }

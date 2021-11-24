@@ -3,9 +3,9 @@ import React from "react";
 const Radio = ({formik, user, name}) => {
  
   return (
-    <div>
+    <div className="radioContainer">
       {user.map((item) => (
-        <React.Fragment key={item.value}>
+        <React.Fragment key={item.value} >
           <input
             type="radio"
             id={item.value}
